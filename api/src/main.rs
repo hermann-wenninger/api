@@ -12,7 +12,7 @@ async fn main() -> std::io::Result<()> {
     let counter = web::Data::new(AppStateCounter{
         counter: Mutex::new(0),
     });
-    let scope = web::scope("/users").service(handler::show_users);
+    //let scope = web::scope("/users").service(handler::show_users);
     HttpServer::new(move|| {
         App::new()
             .app_data(counter.clone())
@@ -23,7 +23,7 @@ async fn main() -> std::io::Result<()> {
             .route("/hey", web::get().to(handler::manual_hello))
             .service(handler::takestate)
             .service(handler::counter)
-            .service(scope)
+            //.service(scope)
             
            
     })

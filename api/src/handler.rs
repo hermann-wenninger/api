@@ -31,6 +31,8 @@ pub async fn echo(req_body: String) -> impl Responder {
 pub async fn manual_hello() -> impl Responder {
     HttpResponse::Ok().body("Hey there!")
 }
+
+#[allow(dead_code)]
 pub async fn show_users() -> impl Responder {
     HttpResponse::Ok().body("Halla li all the users a,b,c,d...a1, a2.. x999999999")
 }
