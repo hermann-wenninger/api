@@ -36,3 +36,21 @@ pub async fn manual_hello() -> impl Responder {
 pub async fn show_users() -> impl Responder {
     HttpResponse::Ok().body("Halla li all the users a,b,c,d...a1, a2.. x999999999")
 }
+
+#[allow(dead_code)]
+//configurations
+pub fn config(cfg: &mut web::ServiceConfig) {
+    cfg.service(
+        web::resource("/app")
+            .route(web::get().to(|| async { HttpResponse::Ok().body("app") }))
+            .route(web::head().to(HttpResponse::MethodNotAllowed)),
+    );
+}
+#[allow(dead_code)]
+pub fn scoped_config(cfg: &mut web::ServiceConfig) {
+    cfg.service(
+        web::resource("/test")
+            .route(web::get().to(|| async { HttpResponse::Ok().body("test") }))
+            .route(web::head().to(HttpResponse::MethodNotAllowed)),
+    );
+}
