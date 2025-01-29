@@ -1,0 +1,2 @@
+$ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem 
+    -days 365 -sha256 -subj "/C=DE/ST=Bayern/L=München/O=AISir/OU=Org/CN=beispiel.com"
