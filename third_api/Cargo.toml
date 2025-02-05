@@ -1,0 +1,8 @@
+[package]
+name = "third_api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4.0.0-beta.8"
+actix-rt = "2.5.0"  # Add this line
